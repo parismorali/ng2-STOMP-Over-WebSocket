@@ -3,23 +3,21 @@ import * as Stomp from 'stompjs';
 import * as SockJS from 'sockjs-client';
 
 interface Config {
-
 	//websocket endpoint
 	host:string;
-
+	
 	//optional headers
 	headers?:Object;
-
+	
 	//heartbeats (ms)
 	heartbeatIn?: number;
 	heartbeatOut?: number;
-
+	
 	//debuging
 	debug?:boolean;
-
+	
 	//reconnection time (ms)
 	recTimeout?:number;
-
 }
 
 
@@ -71,8 +69,8 @@ export class StompService {
 	public startConnect(): Promise<{}>{
 
 		if (this.config === null) {
-      		throw Error('Configuration required!');
-    	}
+      			throw Error('Configuration required!');
+    		}
 
 		this.status = 'CONNECTING';
 
